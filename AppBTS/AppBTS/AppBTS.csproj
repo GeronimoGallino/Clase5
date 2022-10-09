@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{73C7E95B-4C01-4DEC-9FB6-9E44A05E7949}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AppBTS</RootNamespace>
+    <AssemblyName>AppBTS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Datos\DBHelper.cs" />
+    <Compile Include="Negocio\Bug.cs" />
+    <Compile Include="Negocio\Criticidad.cs" />
+    <Compile Include="Negocio\Estado.cs" />
+    <Compile Include="Negocio\HistorialBug.cs" />
+    <Compile Include="Negocio\Prioridad.cs" />
+    <Compile Include="Negocio\Producto.cs" />
+    <Compile Include="Negocio\Usuario.cs" />
+    <Compile Include="Presentacion\frmConsultaBugs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmConsultaBugs.designer.cs">
+      <DependentUpon>frmConsultaBugs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmDetalleBug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmDetalleBug.designer.cs">
+      <DependentUpon>frmDetalleBug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmLogin.designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentacion\frmConsultaBugs.resx">
+      <DependentUpon>frmConsultaBugs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmDetalleBug.resx">
+      <DependentUpon>frmDetalleBug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Imagenes\actualizar.png" />
+    <Content Include="Imagenes\buscar1.png" />
+    <Content Include="Imagenes\buscar2.png" />
+    <Content Include="Imagenes\buscar3.png" />
+    <Content Include="Imagenes\cancelar1.png" />
+    <Content Include="Imagenes\cancelar2.png" />
+    <Content Include="Imagenes\Cancelar3.png" />
+    <Content Include="Imagenes\cancelar4.png" />
+    <Content Include="Imagenes\candado.png" />
+    <Content Include="Imagenes\configuration.png" />
+    <Content Include="Imagenes\delete_exit.png" />
+    <Content Include="Imagenes\documentediting.png" />
+    <Content Include="Imagenes\edit_file.png" />
+    <Content Include="Imagenes\Excel1.ico" />
+    <Content Include="Imagenes\excel3.ico" />
+    <Content Include="Imagenes\excel4.bmp" />
+    <Content Include="Imagenes\grabar1.png" />
+    <Content Include="Imagenes\grabar2.png" />
+    <Content Include="Imagenes\grabar3.png" />
+    <Content Include="Imagenes\grabar4.png" />
+    <Content Include="Imagenes\i-info.jpg" />
+    <Content Include="Imagenes\i-info2.jpg" />
+    <Content Include="Imagenes\logout_door.png" />
+    <Content Include="Imagenes\new-file.png" />
+    <Content Include="Imagenes\new_add_user.png" />
+    <Content Include="Imagenes\nuevo1.png" />
+    <Content Include="Imagenes\nuevo2.png" />
+    <Content Include="Imagenes\ok_accept.png" />
+    <Content Include="Imagenes\pregunta.jpg" />
+    <Content Include="Imagenes\preview1.png" />
+    <Content Include="Imagenes\preview2.png" />
+    <Content Include="Imagenes\print1.png" />
+    <Content Include="Imagenes\print2.png" />
+    <Content Include="Imagenes\print3.png" />
+    <Content Include="Imagenes\print4.png" />
+    <Content Include="Imagenes\puerta2.bmp" />
+    <Content Include="Imagenes\salir1.png" />
+    <Content Include="Imagenes\search-file.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
